@@ -4,11 +4,11 @@
 /** @file matrix.h
 @brief Przeciążanie operatorów na przykładzie Macierzy (bardziej szczegolowa tresc w README.md):
 1. Zaimplementuj klasę TwoDimensionMatrix odzwierciedlajaca macierz 2*2, zawierającą:
-    - tablice typu MatrixElement (tzn. int), oraz size_ (=2)
+    - tablice typu MatrixElement (tzn. int), oraz `size_` (=2)
     - konstruktory:
         - bezargumentowy - zerujący wszystkie elementy
         - kopiujący
-        - przyjmujący jako argument tablicę (const MatrixElement matrix[size][size]) i kopiujący z niej wartości
+        - przyjmujący jako argument tablicę (const MatrixElement matrix[size_][size_]) i kopiujący z niej wartości
     - funkcja składowa do dostępu do elementów (get() zwracająca odpowiedni element
     - funkcja zwracająca `size_` o nazwie `size()`, proponuję aby była `static constexpr`
     - po zaimplementowaniu usun makro `UNIMPLEMENTED_CONSTRUCTORS`
