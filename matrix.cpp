@@ -7,5 +7,5 @@ using namespace std;
 
 #include "matrix.h"
 
-#warning "Funkcje sa do zaimplementowania. Instrukcja w pliku naglowkowym" // po zaimplementowaniu sugeruje usuniecie tej linijki - nie chcemy warningow
+#warning "Klasa jest do zaimplementowania. Instrukcja w pliku naglowkowym, po zaimplementowaniu sugeruje usunac te linijke - po co komu warning?!"
 

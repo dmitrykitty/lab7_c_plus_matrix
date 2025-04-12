@@ -301,6 +301,32 @@ TEST_F(MatrixTester, accessingMatrixByRowAndColumnWithIndexOperator_expectedSucc
 #endif
 }
 
+#if ! defined(UNIMPLEMENTED_SUBSCRIPT_OPERATOR) && ! defined(UNIMPLEMENTED_SUBSCRIPT_OPERATOR_CPP23)
+TEST_F(MatrixTester, accessingMatrixByRowAndColumnWithIndexOperatorCpp23_expectedSuccesfullAccess)
+{
+    const MatrixElement sourceMatrix[elementsInEachDimentions][elementsInEachDimentions] =
+        {
+            { 1, 2 },
+            { 3, 4 }
+        };
+
+    constexpr MatrixElement defaultValue = 0;
+
+    TwoDimensionMatrix m;
+
+    for (size_t row=0; row < m.size(); ++row)
+        for (size_t column=0; column < m.size(); ++column)
+        {
+            auto currentElement = m[row, column];
+            ASSERT_EQ(defaultValue, currentElement) << "row:" << row << " column:" << column;
+
+            m[row][column] = sourceMatrix[row][column];
+            currentElement = m[row, column];
+            ASSERT_EQ(sourceMatrix[row][column], currentElement) << "row:" << row << " column:" << column;
+        }
+}
+#endif
+
 TEST_F(MatrixTester, matrixConverseOperatorIntoSizeType_expected2ReturnElementsInEachDimentions)
 {
 #ifndef UNIMPLEMENTED_CONVERSION_OPERATOR

@@ -1,25 +1,28 @@
 # Macierz 2x2
 ## Przeciążanie operatorów na przykładzie Macierzy.
-W zadaniu chodzi o to, aby utworzyć wygodny w użyciu typ do operacji na macierzy 2*2, o nazwie `TwoDimensionMatrix`. Polega na tym, że mamy utworzone odpowiednie konstruktory, metody i **przeciążone operatory**.
+W zadaniu chodzi o to, aby utworzyć wygodny w użyciu typ do operacji na macierzy 2*2, o nazwie `TwoDimensionMatrix`. 
+Polega na tym, że mamy utworzone odpowiednie konstruktory, metody i **przeciążone operatory**.
 
 ### Do zrobienia:
 1. Zaimplementuj klasę `TwoDimensionMatrix` odzwierciedlajaca macierz 2*2, zawierającą:
-    - tablice typu `MatrixElement` (tzn. `int`, alias jest zdefiniowany w pliku `matrixElement.h`), oraz `size_` (=2)
+    - tablice typu `MatrixElement` (alias na typ `int`, zdefiniowany w pliku `matrixElement.h`), 
+    - `size_` - liczbę bez znaku o wartości wynoszacej 2
     - konstruktory:
-        - bezargumentowy - zerujący wszystkie elementy
-        - kopiujący
+        - bezargumentowy - zerujący wszystkie elementy macierzy
+        - kopiujący - kopiujacy wszystkie elementy macierzy
         - przyjmujący jako argument tablicę `const MatrixElement matrix[size_][size_]` i kopiujący z niej wartości
-    - funkcja składowa do dostępu do elementów (`get()`) zwracająca odpowiedni element
+    - funkcja składowa do dostępu do elementów (`get()`) zwracająca odpowiedni element przyjmując dwa argumenty: `row` i `column`
     - funkcja zwracająca `size_` o nazwie (`size()`), proponuję aby była `static constexpr`
 2. Uzupełnij klasy o następujące operacje zdefiniowane poprzez przeciążenie operatorów:
     - operator przypisania kopiujący (głęboko): `operator=()`
-    - operatory wypisywania do strumienia (jako funkcja zewnętrzna) - format dowolny, byleby wszystkie elementy były w strumieniu
-    - operatory wczytywania ze strumienia (jako funkcja zewnętrzna) - format dla macierzy:
+    - operatory wypisywania do strumienia (jako funkcja zewnętrzna) - format i separator elementow dowolny,
+      byleby wszystkie elementy były w strumieniu
+    - operatory wczytywania ze strumienia (jako funkcja zewnętrzna) - dla macierzy:
       ```
       { a, b }
       { c, d }
       ```
-      powinno się odbyć:
+      wczytuje sie w nastepujący sposób:
       ```
         a b
         c d
@@ -28,10 +31,22 @@ W zadaniu chodzi o to, aby utworzyć wygodny w użyciu typ do operacji na macier
         - `TwoDimensionMatrix operator+(const TwoDimensionMatrix& matrix1, const TwoDimensionMatrix& matrix2); // jako funkcja globalna`
         - `TwoDimensionMatrix& operator*=(MatrixElement number); // metoda klasy`
         - Zadany operator logiczny (metoda klasy) - to jest przykład gdzie **nie** należy przeciążać operatorów:
-          `TwoDimensionMatrix operator&&(const TwoDimensionMatrix& matrix) const;`
-        - operator tablicowy dostający się po indeksie do pierwszego z wymiarów tablicy (metoda klasy), **proszę pamiętać, że mają być dwie wersje: z i bez const**
+          `TwoDimensionMatrix operator&&(const TwoDimensionMatrix& matrix) const;`  
+          Wykonująca na każdym z elementów `&&`, czyli:
+          ```
+          { 0, 0 }      { 0, 6 }      { 0, 0 }
+          {-3, 9 }  &&  { 0, -9 }  =  { 0, 1 }
+          ```
+    - operator tablicowy dostający się po indeksie do pierwszego z wymiarów tablicy (metoda klasy), 
+        **proszę pamiętać, że mają być dwie wersje: z i bez const**
           `MatrixElement* operator[](size_t i);`
-        - operator konwersji do `size_t`, zwracający to co `size()` (metoda klasy),
+        Od C++23 istnieje możliwość zdefiniowania tego operatora przyjmującego dwa argumenty,
+        ze względu na fakt, że nie wszyscy Państwo mają kompilatory zgodne z tym standardem to testy oczekują wersji jedno-argumentowej.
+        Kto może zachęcam aby spróbował zaimplementować ten operator:
+        `MatrixElement& operator[](size_t row, size_t column);`
+        - Osoby zaawansowane mogą spróbować użyć funckjonalności C++23, tzw. "Deducting this",
+          niestety kompilator na bobotcie tego nie obsłuży, stąd lepiej tego nie wysyłać.
+    - operator konwersji do `size_t`, zwracający to co `size()` (metoda klasy),
 3. Deklaracja klasy i funkcji globalnych powinna się znaleźć w pliku "matrix.h", natomiast definicje funkcji zewnętrznych i metod klas w pliku źródłowym `matrix.cpp`
 
 Informacje o co chodzi w paczce, na co zwrócić uwagę, jak czytać testy znajdują się w materiale [wideo](https://banbye.com/watch/v_L15GKhIybbHc).
@@ -66,8 +81,8 @@ ________________________________________________________________________________
     ```
 2. Jak ma działać operator tablicowy []?
    - Operator ten przyjmuje tylko jeden argument (poza this), a chcemy odnieść się w następujący sposób:
-    `matrix[row][column]`, dlatego ten operator musi zwrócić matrix[row] typu `MatrixElement*`.
-3. Mam operator indeksowania [], a kompilator jakby go nie widzi.
+    `matrix[row][column]`, dlatego ten operator musi zwrócić `matrix[row]` typu `MatrixElement*`.
+3. Mam operator indeksowania `[]`, a kompilator jakby go nie widzi.
    - To najczęstrzy błąd w tym zadaniu - muszą być dwie wersje - jedna zwykła, a druga stała (przydomek `const`)
 4. Nie rozumiem dlaczego mi test nie przechodzi!
    - Testy się __starałem__ robić proste i czytelne o jak najwięcej mówiącej nazwie. Warto wejść do ciała testu i popatrzyć co się tam dzieje.
@@ -77,6 +92,8 @@ ________________________________________________________________________________
    - W pliku `CMakeLists.txt` są tak właściwie dwa projekty - jeden zwykły, gdzie można sobie testować własną klasę ręcznie, a drugi o nazwie `tests`, który testuje testami, jakie używa Bobot.
 7. Są rozbieżności między treścią `README.md`, a treściami w plikach nagłówkowych!
   - W tym roku przechodzimy na `README.md`, więc ta treść jest wiążąca.
+8. Zamiast wypisać mi macierzy wypisuje jedną liczbę, czemu?
+  - Proszę przeczytać o słówku `explicit`, oraz oznaczyć nim operator konwersji, aby nie odbywała się ona niejawnie
 ____________________________________________________________________________________
 # Pytania po implementacji ćwiczenia:
 1. Jaka jest różnica między przeciążaniem operatorów jako metoda klasy vs jako funkcja?
@@ -138,7 +155,6 @@ The rest will be taken care of automatically. You can check the `GRADE.md` file 
     ├── matrix.h            # file to create class declaration and methods' declaration
     ├── matrix.cpp          # file to implement methods
     ├── matrixElement.h     # file containing type alias
-    ├── trescPdf.pdf        # documentation in PDF (generated by Doxygen)
     ├── tests               # here are tests for exercise, inner CMakeLists.txt, GTest library used by tests
     │   ├── CMakeLists.txt  # iner CMake for tests - it is included by outter CMake
     │   ├── matrixTests.cpp # files with tests for exercise
