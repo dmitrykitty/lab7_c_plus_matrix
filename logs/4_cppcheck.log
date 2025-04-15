@@ -1,0 +1,3 @@
+/tmp/tmpphi_170g/student/matrix.h:106:1: warning: The class 'TwoDimensionMatrix' does not declare a constructor although it has private member variables which likely require initialization. [noConstructor]
+class TwoDimensionMatrix
+^

@@ -1,0 +1,39 @@
+-- The C compiler identification is GNU 13.1.0
+-- The CXX compiler identification is GNU 13.1.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Looking for __asan_init in asan
+-- Looking for __asan_init in asan - found
+-- Looking for __ubsan_handle_add_overflow in ubsan
+-- Looking for __ubsan_handle_add_overflow in ubsan - found
+-- Sanitizers (AddressSanitizer + UndefinedBehaviorSanitizer) są dostępne
+-- Znaleziono include-what-you-use: /usr/bin/include-what-you-use
+CMake Warning at CMakeLists.txt:54 (message):
+  Brak pliku mappingu IWYU:
+  /tmp/tmpphi_170g/student/unit_tests/include-what-you-use_exceptions.imp
+
+
+Katalog do zbudowanego projektu: /tmp/tmpphi_170g/student/build
+ + Znaleziono nagłówki: /tmp/tmpphi_170g/student/matrix.h;/tmp/tmpphi_170g/student/matrixElement.h
+ + Znaleziono źródła: /tmp/tmpphi_170g/student/main.cpp;/tmp/tmpphi_170g/student/matrix.cpp
+ + Znaleziono źródła bez main.cpp: /tmp/tmpphi_170g/student/matrix.cpp
+	* valgrind found: /usr/bin/valgrind
+	* cppcheck found: /usr/local/bin/cppcheck
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+ + Znaleziono pliki testów: /tmp/tmpphi_170g/student/unit_tests/matrixTests.cpp
+ + katalog nagłówków: 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /tmp/tmpphi_170g/student/build
