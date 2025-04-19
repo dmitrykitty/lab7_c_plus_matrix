@@ -46,8 +46,10 @@ int main()
 {
     std::cout << "Hello " << FIRSTNAME << " " << SURNAME << "!" << '\n'
               << "make Your teacher: " << TEACHER_MAIL << " proud of you!" << std::endl;
+
+
               
-    validateStudentsInfo();
+    //validateStudentsInfo();
 }
 
 

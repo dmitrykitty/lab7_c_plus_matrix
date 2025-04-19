@@ -94,27 +94,43 @@ ________________________________________________________________________________
 #include "matrixElement.h"
 
 
-#define UNIMPLEMENTED_CONSTRUCTORS
-#define UNIMPLEMENTED_ASIGNMENT_OPERATOR
-#define UNIMPLEMENTED_OSTREAM_OPERATOR
+//#define UNIMPLEMENTED_CONSTRUCTORS
+//#define UNIMPLEMENTED_ASIGNMENT_OPERATOR
+//#define UNIMPLEMENTED_OSTREAM_OPERATOR
 #define UNIMPLEMENTED_ISTREAM_OPERATOR
 #define UNIMPLEMENTED_ARITHMETIC_OPERATORS
 #define UNIMPLEMENTED_SUBSCRIPT_OPERATOR
 #define UNIMPLEMENTED_CONVERSION_OPERATOR
 #define UNIMPLEMENTED_SUBSCRIPT_OPERATOR_CPP23 // bobot does not have nevest compiler
 
-class TwoDimensionMatrix
-{
+class TwoDimensionMatrix {
     constexpr static std::size_t size_ = 2;
+    MatrixElement matrix[size_][size_]{};
 
 public:
-    // TODO: ...
+    TwoDimensionMatrix() = default;
 
-private: // methods:
-    // TODO: ...
+    TwoDimensionMatrix(const MatrixElement (&other)[size_][size_]) {
+        for (std::size_t i = 0; i < size_; i++)
+            for (std::size_t j = 0; j < size_; j++)
+                matrix[i][j] = other[i][j];
+    }
 
-private: // fields:
-    MatrixElement matrix_[size_][size_];
+    TwoDimensionMatrix(const TwoDimensionMatrix &other): TwoDimensionMatrix(other.matrix) {}
+
+    MatrixElement get(size_t row, size_t column) const { return matrix[row][column]; }
+    constexpr static size_t size() { return size_; }
+
+    TwoDimensionMatrix &operator=(TwoDimensionMatrix other);
+    friend std::ostream& operator<<(std::ostream& out, const TwoDimensionMatrix& matrix);
+
+private:
+    void swap(TwoDimensionMatrix &other) noexcept;
 };
+
+
+
+
+
 
 #endif // MATRIX_H

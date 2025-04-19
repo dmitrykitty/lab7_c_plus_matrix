@@ -1,0 +1,23 @@
+# ninja log v6
+57	1258	7667638672101334	unit_tests/CMakeFiles/unit_tests.dir/__/matrix.cpp.obj	9d957e9d14327016
+42	2682	7667638671943810	unit_tests/lib/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	2640982cc83c022a
+34	11590	7667638671873813	unit_tests/lib/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	e0ff0fb5fc6be5bf
+32	1093	7667639373575100	unit_tests/CMakeFiles/unit_tests.dir/__/matrix.cpp.obj	9d957e9d14327016
+24	2469	7667639373495112	unit_tests/CMakeFiles/unit_tests.dir/matrixTests.cpp.obj	eaeec27108f54d07
+14	4585	7667639373395060	lib/libgtest.a	40969e1b276f99eb
+4585	4659	7667639419112693	lib/libgtest_main.a	f4bc60cce656163e
+4659	9883	7667639419844308	bin/unit_tests.exe	687d7bf69a1de7f0
+19	979	7667642627280009	unit_tests/CMakeFiles/unit_tests.dir/__/matrix.cpp.obj	9d957e9d14327016
+9	2285	7667642627184445	unit_tests/CMakeFiles/unit_tests.dir/matrixTests.cpp.obj	eaeec27108f54d07
+2285	7274	7667642649938752	bin/unit_tests.exe	687d7bf69a1de7f0
+16	795	7667649242109663	unit_tests/CMakeFiles/unit_tests.dir/__/matrix.cpp.obj	9d957e9d14327016
+9	2006	7667649242033210	unit_tests/CMakeFiles/unit_tests.dir/matrixTests.cpp.obj	eaeec27108f54d07
+2007	6837	7667649262006175	bin/unit_tests.exe	687d7bf69a1de7f0
+20	1105	7667649432980867	unit_tests/CMakeFiles/unit_tests.dir/__/matrix.cpp.obj	9d957e9d14327016
+19	852	7667649851495675	unit_tests/CMakeFiles/unit_tests.dir/__/matrix.cpp.obj	9d957e9d14327016
+14	765	7667657429836734	unit_tests/CMakeFiles/unit_tests.dir/__/matrix.cpp.obj	9d957e9d14327016
+16	776	7667658056722386	unit_tests/CMakeFiles/unit_tests.dir/__/matrix.cpp.obj	9d957e9d14327016
+14	763	7667658266082592	unit_tests/CMakeFiles/unit_tests.dir/__/matrix.cpp.obj	9d957e9d14327016
+15	758	7667663613014773	unit_tests/CMakeFiles/unit_tests.dir/__/matrix.cpp.obj	9d957e9d14327016
+10	1950	7667663612964124	unit_tests/CMakeFiles/unit_tests.dir/matrixTests.cpp.obj	eaeec27108f54d07
+1950	6923	7667663632372782	bin/unit_tests.exe	687d7bf69a1de7f0
