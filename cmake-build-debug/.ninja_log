@@ -21,3 +21,14 @@
 15	758	7667663613014773	unit_tests/CMakeFiles/unit_tests.dir/__/matrix.cpp.obj	9d957e9d14327016
 10	1950	7667663612964124	unit_tests/CMakeFiles/unit_tests.dir/matrixTests.cpp.obj	eaeec27108f54d07
 1950	6923	7667663632372782	bin/unit_tests.exe	687d7bf69a1de7f0
+18	1017	7667673174174904	unit_tests/CMakeFiles/unit_tests.dir/__/matrix.cpp.obj	9d957e9d14327016
+13	2342	7667673174124006	unit_tests/CMakeFiles/unit_tests.dir/matrixTests.cpp.obj	eaeec27108f54d07
+2342	7460	7667673197416418	bin/unit_tests.exe	687d7bf69a1de7f0
+17	817	7667682079346198	unit_tests/CMakeFiles/unit_tests.dir/__/matrix.cpp.obj	9d957e9d14327016
+19	1015	7667702733948847	unit_tests/CMakeFiles/unit_tests.dir/__/matrix.cpp.obj	9d957e9d14327016
+17	1060	7667703914027576	unit_tests/CMakeFiles/unit_tests.dir/__/matrix.cpp.obj	9d957e9d14327016
+19	969	7667706458038067	unit_tests/CMakeFiles/unit_tests.dir/__/matrix.cpp.obj	9d957e9d14327016
+13	2339	7667706457977353	unit_tests/CMakeFiles/unit_tests.dir/matrixTests.cpp.obj	eaeec27108f54d07
+2339	7478	7667706481238301	bin/unit_tests.exe	687d7bf69a1de7f0
+9	681	7667709716368073	unit_tests/CMakeFiles/unit_tests.dir/__/matrix.cpp.obj	9d957e9d14327016
+681	5690	7667709723085870	bin/unit_tests.exe	687d7bf69a1de7f0

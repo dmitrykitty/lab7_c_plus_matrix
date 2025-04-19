@@ -97,8 +97,8 @@ ________________________________________________________________________________
 //#define UNIMPLEMENTED_CONSTRUCTORS
 //#define UNIMPLEMENTED_ASIGNMENT_OPERATOR
 //#define UNIMPLEMENTED_OSTREAM_OPERATOR
-#define UNIMPLEMENTED_ISTREAM_OPERATOR
-#define UNIMPLEMENTED_ARITHMETIC_OPERATORS
+//#define UNIMPLEMENTED_ISTREAM_OPERATOR
+//#define UNIMPLEMENTED_ARITHMETIC_OPERATORS
 #define UNIMPLEMENTED_SUBSCRIPT_OPERATOR
 #define UNIMPLEMENTED_CONVERSION_OPERATOR
 #define UNIMPLEMENTED_SUBSCRIPT_OPERATOR_CPP23 // bobot does not have nevest compiler
@@ -122,15 +122,20 @@ public:
     constexpr static size_t size() { return size_; }
 
     TwoDimensionMatrix &operator=(TwoDimensionMatrix other);
-    friend std::ostream& operator<<(std::ostream& out, const TwoDimensionMatrix& matrix);
+
+    TwoDimensionMatrix &operator*=(MatrixElement num);
+
+    TwoDimensionMatrix operator&&(const TwoDimensionMatrix &matrix) const;
+
+    friend std::ostream &operator<<(std::ostream &out, const TwoDimensionMatrix &other);
+
+    friend std::istream &operator>>(std::istream &in, TwoDimensionMatrix &other);
+
+    friend TwoDimensionMatrix operator+(const TwoDimensionMatrix &matrix1, const TwoDimensionMatrix &matrix2);
 
 private:
     void swap(TwoDimensionMatrix &other) noexcept;
 };
-
-
-
-
 
 
 #endif // MATRIX_H
