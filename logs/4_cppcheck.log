@@ -1,3 +1,6 @@
-/tmp/tmpphi_170g/student/matrix.h:106:1: warning: The class 'TwoDimensionMatrix' does not declare a constructor although it has private member variables which likely require initialization. [noConstructor]
-class TwoDimensionMatrix
+/tmp/tmpu2bz4k4x/student/matrix.h:113:5: warning: Class 'TwoDimensionMatrix' has a constructor with 1 argument that is not explicit. [noExplicitConstructor]
+    TwoDimensionMatrix(const MatrixElement (&other)[size_][size_]) {
+    ^
+/tmp/tmpu2bz4k4x/student/main.cpp:79:0: warning: The function 'validateStudentsInfo' is never used. [unusedFunction]
+void validateStudentsInfo()
 ^

@@ -18,13 +18,13 @@
 -- Znaleziono include-what-you-use: /usr/bin/include-what-you-use
 CMake Warning at CMakeLists.txt:54 (message):
   Brak pliku mappingu IWYU:
-  /tmp/tmpphi_170g/student/unit_tests/include-what-you-use_exceptions.imp
+  /tmp/tmpu2bz4k4x/student/unit_tests/include-what-you-use_exceptions.imp
 
 
-Katalog do zbudowanego projektu: /tmp/tmpphi_170g/student/build
- + Znaleziono nagłówki: /tmp/tmpphi_170g/student/matrix.h;/tmp/tmpphi_170g/student/matrixElement.h
- + Znaleziono źródła: /tmp/tmpphi_170g/student/main.cpp;/tmp/tmpphi_170g/student/matrix.cpp
- + Znaleziono źródła bez main.cpp: /tmp/tmpphi_170g/student/matrix.cpp
+Katalog do zbudowanego projektu: /tmp/tmpu2bz4k4x/student/build
+ + Znaleziono nagłówki: /tmp/tmpu2bz4k4x/student/matrix.h;/tmp/tmpu2bz4k4x/student/matrixElement.h
+ + Znaleziono źródła: /tmp/tmpu2bz4k4x/student/main.cpp;/tmp/tmpu2bz4k4x/student/matrix.cpp
+ + Znaleziono źródła bez main.cpp: /tmp/tmpu2bz4k4x/student/matrix.cpp
 	* valgrind found: /usr/bin/valgrind
 	* cppcheck found: /usr/local/bin/cppcheck
 -- Looking for pthread.h
@@ -32,8 +32,8 @@ Katalog do zbudowanego projektu: /tmp/tmpphi_170g/student/build
 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
 -- Found Threads: TRUE  
- + Znaleziono pliki testów: /tmp/tmpphi_170g/student/unit_tests/matrixTests.cpp
+ + Znaleziono pliki testów: /tmp/tmpu2bz4k4x/student/unit_tests/matrixTests.cpp
  + katalog nagłówków: 
 -- Configuring done
 -- Generating done
--- Build files have been written to: /tmp/tmpphi_170g/student/build
+-- Build files have been written to: /tmp/tmpu2bz4k4x/student/build
